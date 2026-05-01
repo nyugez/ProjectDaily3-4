@@ -14,7 +14,7 @@ COPY . .
 RUN composer install --optimize-autoloader --no-scripts --no-interaction
 RUN npm install && npm run build
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs bootstrap/cache && chmod -R a+rw storage
-RUN php artisan config:cache && php artisan event:cache && php artisan route:cache && php artisan view:cache
 
-EXPOSE 80
-CMD ["frankenphp", "run", "--config", "/app/Caddyfile"]
+EXPOSE 8080
+
+CMD php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && frankenphp run --config /app/Caddyfile
