@@ -1,5 +1,8 @@
 {
   "php": {
     "extensions": ["gd"]
+  },
+  "build": {
+    "aptPackages": ["libgd-dev"]
   }
 }
