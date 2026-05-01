@@ -16,4 +16,5 @@ RUN npm install && npm run build
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs bootstrap/cache && chmod -R a+rw storage
 RUN php artisan config:cache && php artisan event:cache && php artisan route:cache && php artisan view:cache
 
-CMD ["/start-container.sh"]
+EXPOSE 80
+CMD ["frankenphp", "run", "--config", "/app/Caddyfile"]
