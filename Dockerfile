@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y curl unzip zip && \
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y nodejs
 
-RUN install-php-extensions gd zip xml mbstring ctype fileinfo curl dom filter hash openssl pcre pdo session tokenizer
+RUN install-php-extensions gd zip xml mbstring ctype fileinfo curl dom filter hash openssl pcre pdo pdo_mysql session tokenizer
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
