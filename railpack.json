@@ -1,8 +1,8 @@
 {
   "php": {
-    "extensions": ["gd", "zip"]
+    "extensions": ["gd", "zip", "xml", "mbstring", "ctype", "fileinfo"]
   },
   "build": {
-    "aptPackages": ["libgd-dev"]
+    "aptPackages": ["libgd-dev", "libzip-dev"]
   }
 }
